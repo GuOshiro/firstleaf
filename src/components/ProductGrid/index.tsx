@@ -12,7 +12,7 @@ function ProductGrid() {
   if (!data) {
     return <div>Loading...</div>;
   }
-  
+
   const colors = useMemo(() => {
     const uniqueColors = new Set(data.map((product) => product.color));
     return [...uniqueColors];
@@ -35,14 +35,14 @@ function ProductGrid() {
         setFilter={setFilter}
         colors={colors}
       />
-      <div className={styles.grid}>
+      <ul className={styles.grid}>
         {filteredItems?.map((product: Product, index: number) => (
           <ProductItem
             key={`${index}-${product.id}-${product.name}`}
             product={product}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

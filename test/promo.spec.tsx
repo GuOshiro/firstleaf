@@ -83,6 +83,6 @@ describe("promo page", () => {
       </QueryWrapper>
     );
 
-    expect(getAllByRole("listitem")).toHaveLength(6);
+    expect(getAllByRole("listitem")).toHaveLength(10);
   });
 });
