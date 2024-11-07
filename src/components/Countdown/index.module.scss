@@ -19,6 +19,9 @@ $regular-green: #7da371;
     color: $bright-green;
     line-height: 1.29;
     font-weight: 500;
+    @media (max-width: 640px) {
+      display: none;
+    }
   }
 
   .counter {

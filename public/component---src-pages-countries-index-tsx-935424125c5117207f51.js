@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfirstleaf_challenge=self.webpackChunkfirstleaf_challenge||[]).push([[120],{4159:function(e,l,n){n.r(l);var t=n(6540);l.default=()=>t.createElement("div",null,t.createElement("h1",null,"All Countries"))}}]);
+//# sourceMappingURL=component---src-pages-countries-index-tsx-935424125c5117207f51.js.map
