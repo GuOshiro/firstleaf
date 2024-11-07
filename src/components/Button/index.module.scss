@@ -1,0 +1,19 @@
+$robotoBook {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+$orange: #d5440b;
+
+
+.button-checkout {
+  @extend %robotoBook;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 16px;
+  background-color: $orange;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}

@@ -5,42 +5,22 @@
 
 $bright-green: #333;
 
-.countdown {
-  @extend %robotoBook;
 
-  .label {
-    font-size: 14px;
-    color: #7f7f7f;
-    line-height: 1.29;
-    letter-spacing: 0.4px;
-  }
-
-  .counter {
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: $bright-green;
-  }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 4rem;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
-.blink {
-  animation: blinker 1s linear infinite;
-
-  .label,
-  .counter {
-    color: red;
-  }
-}
-
-.times-up {
-  .label,
-  .counter {
-    color: red;
-  }
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+.right-side{
+  display: flex;
+  gap: 20px
 }

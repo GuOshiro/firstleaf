@@ -3,23 +3,29 @@
   font-weight: 400;
 }
 
-$bright-green: #333;
+$bright-green: #6a6a6a;
+$font-size: 17px;
+$regular-green: #7da371;
 
 .countdown {
   @extend %robotoBook;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 1px;
 
   .label {
-    font-size: 14px;
-    color: #7f7f7f;
+    font-size: $font-size;
+    color: $bright-green;
     line-height: 1.29;
-    letter-spacing: 0.4px;
+    font-weight: 500;
   }
 
   .counter {
-    font-size: 18px;
+    font-size: $font-size;
     font-weight: 500;
-    letter-spacing: 0.5px;
     color: $bright-green;
+    color: #6a915d
   }
 }
 

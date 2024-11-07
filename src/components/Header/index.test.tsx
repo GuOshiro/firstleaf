@@ -1,9 +1,17 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Countdown from './index';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import Header from "./index";
 
-test('renders Countdown component', () => {
-    render(<Countdown />);
-    const countdownElement = screen.getByText(/countdown/i);
+describe("Header Component", () => {
+  it("renders Header component and render countdown", () => {
+    render(<Header />);
+    const countdownElement = screen.getByText(/Reserving your wines for/i);
     expect(countdownElement).toBeInTheDocument();
+  });
+
+  it("renders Header component and render checkout", () => {
+    render(<Header />);
+    const checkoutElement = screen.getByText(/Checkout/i);
+    expect(checkoutElement).toBeInTheDocument();
+  });
 });
