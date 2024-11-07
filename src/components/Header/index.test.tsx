@@ -2,6 +2,15 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import Header from "./index";
 
+jest.mock("gatsby", () => ({
+  useStaticQuery: () => ({
+    file: {
+      publicURL: "test.com/logo.svg",
+    },
+  }),
+  graphql: jest.fn(),
+}));
+
 describe("Header Component", () => {
   it("renders Header component and render countdown", () => {
     render(<Header />);

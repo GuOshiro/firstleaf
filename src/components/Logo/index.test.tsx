@@ -6,7 +6,7 @@ import { StaticQueryProps } from "gatsby";
 jest.mock("gatsby", () => ({
   useStaticQuery: () => ({
     file: {
-      publicURL: "https://example.com/logo.svg",
+      publicURL: "test.com/logo.svg",
     },
   }),
   graphql: jest.fn(),
@@ -17,6 +17,6 @@ describe("Logo Component", () => {
     render(<Logo />);
     const logoImage = screen.getByAltText("Leafy Logo");
     expect(logoImage).toBeInTheDocument();
-    expect(logoImage).toHaveAttribute("src", "https://example.com/logo.svg");
+    expect(logoImage).toHaveAttribute("src", "test.com/logo.svg");
   });
 });

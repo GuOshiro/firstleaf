@@ -24,7 +24,7 @@ const QueryWrapper: FC<Props> = ({ children }) => {
 jest.mock("gatsby", () => ({
   useStaticQuery: () => ({
     file: {
-      publicURL: "https://example.com/logo.svg",
+      publicURL: "test.com/logo.svg",
     },
   }),
   graphql: jest.fn(),
