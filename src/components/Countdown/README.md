@@ -1,6 +1,6 @@
 # Promo Challenge
 - Refactor Countdown component into a functional component. - OK 
-- Create a new Header component using the Countdown and matching this image:
+- Create a new Header component using the Countdown and matching this image - ok
 - Update the ProductGrid to show more information about the products, the DB references is located here: `test/db.json`, each product card should show at least the `name` and the `tag_line`, feel free to add more info
 - Include the Header with the Countdown and ProductGrid Component in the `pages/promo.tsx`, stacked layout
 - Create a filter on the promo page by `color`
