@@ -1,7 +1,10 @@
-import React from 'react'
-import { useProducts } from '../../hooks/useProducts';
+import React from "react";
+import { useProducts } from "../../hooks/useProducts";
+import ProductItem from "../ProductItem";
+import { Product } from "../../types/Products";
+import * as styles from "./index.module.scss";
 
-const ProductGrid = () => {
+function ProductGrid() {
   const { data } = useProducts();
 
   if (!data) {
@@ -9,10 +12,15 @@ const ProductGrid = () => {
   }
 
   return (
-    <ul>
-      {data?.map(product => <li>{product.name}</li>)}
-    </ul>
-  )
+    <div className={styles.grid}>
+      {data?.map((product: Product, index: number) => (
+        <ProductItem
+          key={`${index}-${product.id}-${product.name}`}
+          product={product}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default ProductGrid;

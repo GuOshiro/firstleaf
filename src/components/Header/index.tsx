@@ -8,13 +8,13 @@ const COUNTDOWN_TIME = 300;
 
 function Header() {
   return (
-    <div className={`${styles.header}`}>
+    <header className={`${styles.header}`}>
       <Logo />
       <div className={`${styles.rightSide}`}>
         <Countdown seconds={COUNTDOWN_TIME} />
         <Button label="Checkout" />
       </div>
-    </div>
+    </header>
   );
 }
 

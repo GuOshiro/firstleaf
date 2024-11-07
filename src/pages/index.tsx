@@ -14,7 +14,6 @@ const headingStyles = {
 
 const HomePage = (): JSX.Element => (
   <main style={pageStyles}>
-    <Header />
     <h1 style={headingStyles}>Choose a challenge:</h1>
     <ul>
       <li>

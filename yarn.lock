@@ -2483,6 +2483,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-star-ratings@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.npmjs.org/@types/react-star-ratings/-/react-star-ratings-2.3.3.tgz"
+  integrity sha512-8vLqJG1uRA2SmYBBMPWpv6QWHLvZ/a3XmELCIf4xh4VFXT7QkkrcthiLSMjQ4ibDiUtYYpyLB0JoR1lBHSHA2A==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^18.0.0", "@types/react@^18.2.55":
   version "18.3.12"
   resolved "https://registry.npmjs.org/@types/react/-/react-18.3.12.tgz"
@@ -3936,6 +3943,11 @@ cjs-module-lexer@^1.0.0:
   version "1.4.1"
   resolved "https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-1.4.1.tgz"
   integrity sha512-cuSVIHi9/9E/+821Qjdvngor+xpnlwnuwIyZOaLmHBVdXL+gP+I6QQB9VkO7RI77YIcTV+S1W9AreJ5eN63JBA==
+
+classnames@^2.2.1:
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/classnames/-/classnames-2.5.1.tgz"
+  integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
 
 cli-boxes@^2.2.1:
   version "2.2.1"
@@ -9547,7 +9559,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -9773,6 +9785,24 @@ react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825:
     acorn "^6.2.1"
     loose-envify "^1.1.0"
     neo-async "^2.6.1"
+
+react-star-ratings@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/react-star-ratings/-/react-star-ratings-2.3.0.tgz"
+  integrity sha512-34Z/oFNDRRn4ZcX7F3t9ccnpo7SQ32gD/vsusQOBc6B6vlqaGR6tke1/Yx3jTDjemKRSmXqhKgpPTR7/JAXq6A==
+  dependencies:
+    classnames "^2.2.1"
+    prop-types "^15.6.0"
+    react "^16.1.0"
+
+react@^16.1.0:
+  version "16.14.0"
+  resolved "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
+  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.0.0, "react@^18.0.0 || ^0.0.0", react@^18.2.0, react@^18.3.1, react@0.0.0-experimental-c8b778b7f-20220825, react@18.x:
   version "18.3.1"

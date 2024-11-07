@@ -1,0 +1,26 @@
+%robotoBook {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+$bright-green: #333;
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+  .title {
+    @extend %robotoBook;
+    font-size: 8px;
+    font-weight: 600;
+  }
+  
+  .content {
+    @extend %robotoBook;
+    color: $bright-green;
+    font-size: 12px;
+  }
+}

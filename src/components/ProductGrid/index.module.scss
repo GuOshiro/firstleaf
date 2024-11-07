@@ -1,0 +1,16 @@
+%robotoBook {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+$bright-green: #333;
+
+.grid {
+  display: grid;
+  width: 100%;
+  max-width: 1240px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding-top: 100px;
+  margin: 0 auto;
+}
