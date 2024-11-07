@@ -1,25 +1,18 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import * as styles from "./index.module.scss";
 
 function Logo() {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "logo.svg" }) {
+        publicURL
+      }
+    }
+  `);
+
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          file(relativePath: { eq: "logo.svg" }) {
-            publicURL
-          }
-        }
-      `}
-      render={(data) => (
-        <img
-          className={styles.logo}
-          src={data.file.publicURL}
-          alt="Leafy Logo"
-        />
-      )}
-    />
+    <img className={styles.logo} src={data.file.publicURL} alt="Leafy Logo" />
   );
 }
 
