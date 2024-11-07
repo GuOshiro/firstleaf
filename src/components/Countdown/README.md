@@ -4,7 +4,7 @@
 - Create a new Header component using the Countdown and matching this image - ok
 - Update the ProductGrid to show more information about the products, the DB references is located here: `test/db.json`, each product card should show at least the `name` and the `tag_line`, feel free to add more info
 - Include the Header with the Countdown and ProductGrid Component in the `pages/promo.tsx`, stacked layout - ok
-- Create a filter on the promo page by `color`
+- Create a filter on the promo page by `color` - ok
 - There is a test suit added for the `pages/promo.tsx` page, make sure that all test cases passes, add more test if necessary
 - Fix any bugs along the way.
 - Make sure that the site builds correctly

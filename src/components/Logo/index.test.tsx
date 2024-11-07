@@ -1,21 +1,14 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Logo from "./index";
-import { StaticQuery, graphql } from "gatsby";
 import { StaticQueryProps } from "gatsby";
 
-// Mock StaticQuery component in Gatsby
 jest.mock("gatsby", () => ({
-  StaticQuery: ({ render }: StaticQueryProps<any>) => {
-    if (render) {
-      return render({
-        file: {
-          publicURL: "https://example.com/logo.svg",
-        },
-      });
-    }
-    return null;
-  },
+  useStaticQuery: () => ({
+    file: {
+      publicURL: "https://example.com/logo.svg",
+    },
+  }),
   graphql: jest.fn(),
 }));
 

@@ -12,7 +12,7 @@ function ProductGrid() {
   if (!data) {
     return <div>Loading...</div>;
   }
-
+  
   const colors = useMemo(() => {
     const uniqueColors = new Set(data.map((product) => product.color));
     return [...uniqueColors];

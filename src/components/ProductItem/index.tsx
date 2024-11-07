@@ -4,7 +4,11 @@ import * as styles from "./index.module.scss";
 import StarRatings from "react-star-ratings";
 import ProductItemDescription from "../ProductItemDescription";
 
-function ProductItem({ product }: Product) {
+type Props = {
+  product: Product;
+};
+
+function ProductItem({ product }: Props) {
   return (
     <div className={styles.card}>
       <img

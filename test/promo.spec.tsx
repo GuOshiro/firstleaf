@@ -4,8 +4,9 @@ import { render } from "@testing-library/react";
 import { useProducts } from "../src/hooks/useProducts";
 import Promo from "../src/pages/promo";
 import mockProducts from "./db.json";
+import { StaticQueryProps } from "gatsby";
 
-const mockedUseProduct = useProducts as jest.Mock<object>; 
+const mockedUseProduct = useProducts as jest.Mock<object>;
 
 jest.mock("../src/hooks/useProducts");
 
@@ -17,12 +18,17 @@ const QueryWrapper: FC<Props> = ({ children }) => {
   const queryClient = new QueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
-  )
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  );
 };
-
+jest.mock("gatsby", () => ({
+  useStaticQuery: () => ({
+    file: {
+      publicURL: "https://example.com/logo.svg",
+    },
+  }),
+  graphql: jest.fn(),
+}));
 describe("promo page", () => {
   beforeEach(() => {
     mockedUseProduct.mockImplementation(() => ({ isLoading: true }));
@@ -62,18 +68,21 @@ describe("promo page", () => {
     );
 
     expect(getByText(/5:00/i)).toBeInTheDocument();
-  })
+  });
 
   it("should show 5 products", async () => {
     expect.assertions(1);
-    mockedUseProduct.mockImplementation(() => ({ isLoading: false, data: mockProducts }));
+    mockedUseProduct.mockImplementation(() => ({
+      isLoading: false,
+      data: mockProducts,
+    }));
 
-    const { getAllByRole  } = render(
+    const { getAllByRole } = render(
       <QueryWrapper>
         <Promo />
       </QueryWrapper>
     );
 
-    expect(getAllByRole('listitem')).toHaveLength(6);
-  })
+    expect(getAllByRole("listitem")).toHaveLength(6);
+  });
 });
