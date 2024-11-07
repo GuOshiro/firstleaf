@@ -1,0 +1,15 @@
+%robotoBook {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+$bright-green: #333;
+$padding-card: 2rem;
+
+.layout {
+  @extend %robotoBook;
+  max-width: 1240px;
+  width: 100%;
+  padding-top: 80px;
+  margin: 0 auto;
+}
