@@ -1,12 +1,13 @@
 import React from "react";
 import ThreeButtons from "../components/TheBucket";
+import Layout from "../components/Layout";
 
 const BucketPage = (): JSX.Element => (
-  <div>
+  <Layout>
     <h1>Sample content</h1>
 
     <ThreeButtons />
-  </div>
+  </Layout>
 );
 
 export default BucketPage;

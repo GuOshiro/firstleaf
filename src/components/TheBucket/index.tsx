@@ -1,41 +1,67 @@
-import React, {useState} from "react";
-import * as styles from './index.module.scss';
+import React, { useState, useEffect } from "react";
+import * as styles from "./index.module.scss";
 import Countdown from "../Countdown";
 
-const Bucket = ({batchSize, onBatchFull, ...rest}) => {
-    const [count, setCount] = useState(0);
+interface BucketProps {
+  batchSize: number;
+  onBatchFull: () => void;
+  disabled: boolean;
+}
 
-    const updateCount = () => {
-        const batchFull = count % batchSize === 0 && count > 1;
-        setCount(count + 1);
-        if (batchFull) {
-            onBatchFull(batchSize);
-        }
+function Bucket({ batchSize, onBatchFull, disabled, ...rest }: BucketProps) {
+  const [count, setCount] = useState<number>(0);
+
+  const updateCount = () => {
+    setCount(count + 1);
+    const batchFull = (count + 1) % batchSize === 0;
+    if (batchFull) {
+      onBatchFull();
     }
+  };
 
-    return (
-        <button type="button" onClick={updateCount} className={styles.button} {...rest}>
-            {count} glasses poured
-        </button>
-    );
-};
+  return (
+    <button
+      type="button"
+      onClick={updateCount}
+      className={styles.button}
+      {...rest}
+      disabled={disabled}
+    >
+      {count} glasses poured
+    </button>
+  );
+}
 
-const ThreeButtons = (): JSX.Element => {
-    const [batchCount, setBatchCount] = useState(0);
-    const [timeIsUp, setTimeIsUp] = useState(false);
+function ThreeButtons() {
+  const [batchCount, setBatchCount] = useState<number>(0);
+  const [timeIsUp, setTimeIsUp] = useState<boolean>(false);
+  const [startTimer, setStartTimer] = useState<boolean>(false);
 
+  const handleFullBatch = () => {
+    setBatchCount(batchCount + 1);
+    setStartTimer(true);
+  };
 
-    const handleFullBatch = () => {
-        setBatchCount(batchCount + 1);
+  useEffect(() => {
+    if (batchCount > 0 && !timeIsUp) {
+      setStartTimer(true);
     }
+  }, [batchCount]);
 
-    return (
-        <>
-            {timeIsUp && <h1>Total {batchCount}</h1>}
-            {!timeIsUp && !!batchCount && <Countdown key={(new Date()).toISOString()} seconds={5} label="" onFinish={() => setTimeIsUp(true)} />}
-            <Bucket onBatchFull={handleFullBatch} batchSize={3} disabled={timeIsUp} />
-        </>
-    );
-};
+  return (
+    <>
+      {timeIsUp && <h1>Total {batchCount}</h1>}
+      {!timeIsUp && startTimer && (
+        <Countdown
+          key={new Date().toISOString()}
+          seconds={5}
+          label=""
+          onFinish={() => setTimeIsUp(true)}
+        />
+      )}
+      <Bucket onBatchFull={handleFullBatch} batchSize={3} disabled={timeIsUp} />
+    </>
+  );
+}
 
 export default ThreeButtons;
