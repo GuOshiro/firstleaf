@@ -3,7 +3,7 @@ import * as styles from "./index.module.scss";
 
 type Props = {
   label: string;
-  content: string | number;
+  content?: string | number;
 };
 
 function CountryDetailsItem({ label, content }: Props) {

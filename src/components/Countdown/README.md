@@ -16,10 +16,10 @@
 - Header should stretch full window width, but content should be contained in 1320px centered. - ok
 - When the screen size is so narrow that the countdown and logo don't fit, the label portion of the countdown should disappear. - ok
 - ProductGrid should be contained in 1320px max width container, and the cards distributions should be as follows:
-  - max and max + (> 1320px width) 3 cards, bottle image on the left side of the card - ok
-  - lg (1024px width) 3 cards, bottle image on top side of the card, stacked with the product info - ok
-  - md (768px width) 2 cards with the bottle image on the left side of the card - ok
-  - sm (375 width) 1 card with the image on top - ok
+  - max and max + (> 1320px width) 3 cards, bottle image on the left side of the card 
+  - lg (1024px width) 3 cards, bottle image on top side of the card, stacked with the product info 
+  - md (768px width) 2 cards with the bottle image on the left side of the card 
+  - sm (375 width) 1 card with the image on top 
 - Logo file is located in /images. - ok
 
 ## Notes

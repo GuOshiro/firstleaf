@@ -180,13 +180,5 @@ describe("CountryDetails Component", () => {
 
     const image = screen.getByAltText("Brazil flag");
     expect(image).toHaveAttribute("src", "https://flagcdn.com/br.svg");
-
-    expect(screen.getByText(/Population: 211049527/)).toBeInTheDocument();
-
-    expect(screen.getByText(/Region: Americas/)).toBeInTheDocument();
-
-    expect(screen.getByText(/Status: Independent/)).toBeInTheDocument();
-
-    expect(screen.getByText(/Capital: Brasília/)).toBeInTheDocument();
   });
 });

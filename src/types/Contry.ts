@@ -6,7 +6,7 @@ export type Country = {
   cca3: string;
   independent: boolean;
   status: string;
-  subregion: string;
+  subregion?: string;
   unMember: boolean;
   currencies: Currencies;
   idd: Idd;
