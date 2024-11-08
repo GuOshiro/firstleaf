@@ -1,12 +1,32 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from "react";
+import { graphql } from "gatsby";
+import { Country } from "../../types/Contry";
+import CountryList from "../../components/CountryList";
 
-const CountriesPage = () => {
-  return (
-    <div>
-      <h1>All Countries</h1>
-    </div>
-  );
+export const query = graphql`
+  query {
+    allCountry {
+      nodes {
+        name {
+          common
+        }
+        flags {
+          svg
+        }
+        cca3
+      }
+    }
+  }
+`;
+
+type Props = {
+  data: {
+    allCountry: { nodes: Array<Country> };
+  };
 };
+
+function CountriesPage({ data }: Props) {
+  return <CountryList countries={data.allCountry.nodes} />;
+}
 
 export default CountriesPage;
